@@ -53,6 +53,7 @@ import editor from '@/common/editor'
 import brand from '@/common/brand'
 import newTag from '@/common/newTag'
 import gtTable from '@/common/gtTable'
+import gtTabTree from '@/common/gtTabTree'
 Vue.component('gt-pagination', pagination)
 Vue.component('gt-form', gtform)
 Vue.component('gt-dialog', dialog)
@@ -60,6 +61,7 @@ Vue.component('gt-editor', editor)
 Vue.component('gt-brand', brand);
 Vue.component('gt-newTag', newTag);
 Vue.component('gt-table', gtTable);
+Vue.component('gt-tabTree', gtTabTree);
 
 
 /*
