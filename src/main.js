@@ -27,12 +27,18 @@ Vue.use(VueQuillEditor)
 */
 import store from './store'
 
-/**
+/* *
  * import VueAxios from 'vue-axios'
  * Vue.use(VueAxios, axios);
  * var qs = require('qs');
  * Vue.prototype.qs = qs;
  */
+
+ import VueAxios from 'vue-axios'
+ Vue.use(VueAxios, axios);
+ var qs = require('qs');
+ Vue.prototype.qs = qs;
+
 var qs = require('qs');
 Vue.prototype.qs = qs;
  /**
@@ -54,6 +60,7 @@ import brand from '@/common/brand'
 import newTag from '@/common/newTag'
 import gtTable from '@/common/gtTable'
 import gtTabTree from '@/common/gtTabTree'
+import gtCascaderClass from '@/common/gtCascaderClass'
 import gtCascader from '@/common/gtCascader'
 Vue.component('gt-pagination', pagination)
 Vue.component('gt-form', gtform)
@@ -62,6 +69,7 @@ Vue.component('gt-editor', editor)
 Vue.component('gt-brand', brand);
 Vue.component('gt-newTag', newTag);
 Vue.component('gt-table', gtTable);
+Vue.component('gt-cascader-class', gtCascaderClass);
 Vue.component('gt-cascader', gtCascader);
 
 
