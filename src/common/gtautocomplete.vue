@@ -90,7 +90,6 @@ import autocompleteVue from '../page/autocomplete.vue';
         // })
       },
       querySearchAsync(queryString, cb) {
-        console.log(queryString)
         var restaurants = this.restaurants;
         var results = queryString ? restaurants.filter(this.createStateFilter(queryString)) : restaurants;
 

@@ -1,13 +1,11 @@
 <template>
-<el-upload
-  class="upload-img"
-  :action="data.action?data.action: process.env.API_HOST+'/material/fileUpload/uploadImage'"
-  :name="data.name?data.name:'imageFile'" :show-file-list="false" accept="image/*"
-  :on-success="singleImageSuccess" :before-upload="beforeImageUpload" :on-error="uploadError"
-  :headers="headers">
-  <img v-if="model[data.key]" :src="'http://file.sjgtw.com/'+data.default" class="avatar">
-  <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-</el-upload>
+  <el-upload class="upload-img"
+    :action="data.action?data.action: process.env.API_HOST+'/material/fileUpload/uploadImage'"
+    :name="data.name?data.name:'imageFile'" :show-file-list="false" accept="image/*" :on-success="singleImageSuccess"
+    :before-upload="beforeImageUpload" :on-error="uploadError" :headers="data.headers?data.headers:headers">
+    <img v-if="model[data.key]" :src="'http://file.sjgtw.com/'+data.default" class="avatar">
+    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+  </el-upload>
 </template>
 
 <script>
@@ -16,11 +14,16 @@
     components: {},
     data() {
       return {
-        
+        headers: {
+          'supplierToken': sessionStorage['suppliertoken']
+        },
+        model:{
+
+        }
       };
     },
-    props:{
-      data:{},
+    props: {
+      data: {},
     },
     computed: {},
 
@@ -35,7 +38,7 @@
      *
      */
     created() {
-
+      console.log(this.$props);
     },
     mounted() {
 
