@@ -18,7 +18,7 @@ const newTag = r => require.ensure([], () => r(require('@/page/newTag')), 'newTa
 const uploadImg = r => require.ensure([], () => r(require('@/page/uploadImg')), 'uploadImg');
 const vueEdit = r => require.ensure([], () => r(require('@/page/vueEdit')), 'vueEdit');
 const editor = r => require.ensure([], () => r(require('@/page/editor')), 'editor');
-const sendMessage = r => require.ensure([], () => r(require('@/page/sendMessage')), 'sendMessage');
+const cascader = r => require.ensure([], () => r(require('@/page/cascader')), 'cascader');
 const brand = r => require.ensure([], () => r(require('@/page/brand')), 'brand');
 
 const routes = [{
@@ -81,8 +81,8 @@ const routes = [{
       component: editor,
       meta: ['设置', '管理员设置'],
     }, {
-      path: '/sendMessage',
-      component: sendMessage,
+      path: '/cascader',
+      component: cascader,
       meta: ['设置', '发送通知'],
     }, {
       path: '/brand',

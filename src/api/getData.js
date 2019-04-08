@@ -20,16 +20,16 @@ export const getPagerUserInfo = data => fetch('wxsupplier/userInfoQuery/getPager
 
 
 /**
- * api请求量
+ * 品牌
  */
 
 export const brand = data => fetch('material/brand/getPagerResultByKeyWord', data, 'post');
 
 /**
- * 所有api请求量
+ * 三级分类
  */
 
-export const apiAllCount = () => fetch('/statis/api/count');
+export const baseClassJSONData = data => fetch('material/baseClass/baseClassJSONData', data,'POST');
 
 
 /**
