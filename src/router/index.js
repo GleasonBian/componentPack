@@ -13,9 +13,9 @@ const table = r => require.ensure([], () => r(require('@/page/table')), 'table')
 const formList = r => require.ensure([], () => r(require('@/page/formList')), 'formList');
 const gtTabTree = r => require.ensure([], () => r(require('@/page/gtTabTree')), 'gtTabTree');
 const dialog = r => require.ensure([], () => r(require('@/page/dialog')), 'dialog');
-const visitor = r => require.ensure([], () => r(require('@/page/visitor')), 'visitor');
+const singleImg = r => require.ensure([], () => r(require('@/page/singleImg')), 'singleImg');
 const newTag = r => require.ensure([], () => r(require('@/page/newTag')), 'newTag');
-const uploadImg = r => require.ensure([], () => r(require('@/page/uploadImg')), 'uploadImg');
+const autocomplete = r => require.ensure([], () => r(require('@/page/autocomplete')), 'autocomplete');
 const vueEdit = r => require.ensure([], () => r(require('@/page/vueEdit')), 'vueEdit');
 const editor = r => require.ensure([], () => r(require('@/page/editor')), 'editor');
 const cascader = r => require.ensure([], () => r(require('@/page/cascader')), 'cascader');
@@ -61,16 +61,16 @@ const routes = [{
       component: dialog,
       meta: ['数据管理', '管理员列表'],
     }, {
-      path: '/visitor',
-      component: visitor,
+      path: '/singleImg',
+      component: singleImg,
       meta: ['图表', '用户分布'],
     }, {
       path: '/newTag',
       component: newTag,
       meta: ['图表', '用户数据'],
     }, {
-      path: '/uploadImg',
-      component: uploadImg,
+      path: '/autocomplete',
+      component: autocomplete,
       meta: ['文本编辑', 'MarkDown'],
     }, {
       path: '/vueEdit',

@@ -2,7 +2,7 @@
   <div>
     <head-top></head-top>
     <!-- 三级分类 -->
-      <h1>三级分类</h1>
+    <h1>三级分类</h1>
     <gt-cascader-class></gt-cascader-class>
     <!-- 普通级联 -->
     <h1>普通级联</h1>

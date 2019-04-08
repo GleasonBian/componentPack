@@ -17,6 +17,7 @@
            <el-menu-item index="newTag">newTag</el-menu-item>
            <el-menu-item index="gtTabTree">gtTabTree</el-menu-item>
            <el-menu-item index="cascader">级联</el-menu-item>
+           <el-menu-item index="autocomplete">远程输入建议</el-menu-item>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title"><i class="el-icon-plus"></i>订单管理</template>

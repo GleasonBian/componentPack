@@ -62,6 +62,8 @@ import gtTable from '@/common/gtTable'
 import gtTabTree from '@/common/gtTabTree'
 import gtCascaderClass from '@/common/gtCascaderClass'
 import gtCascader from '@/common/gtCascader'
+import gtAutocomplete from '@/common/gtautocomplete'
+import gtSingleImg from '@/common/gtSingleImg'
 Vue.component('gt-pagination', pagination)
 Vue.component('gt-form', gtform)
 Vue.component('gt-dialog', dialog)
@@ -71,6 +73,8 @@ Vue.component('gt-newTag', newTag);
 Vue.component('gt-table', gtTable);
 Vue.component('gt-cascader-class', gtCascaderClass);
 Vue.component('gt-cascader', gtCascader);
+Vue.component('gt-autocomplete', gtAutocomplete);
+Vue.component('gt-singleImg', gtSingleImg);
 
 
 /*
