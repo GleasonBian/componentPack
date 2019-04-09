@@ -1,7 +1,7 @@
 <template>
   <div>
     <head-top></head-top>
-    <gt-singleImg></gt-singleImg>
+    <gt-singleImg :data='data'></gt-singleImg>
   </div>
 </template>
 
@@ -16,7 +16,7 @@
       return {
         data: {
           key: 'singleImg',
-          action: '',
+          action: '/api/material/fileUpload/uploadImage',
           name: 'imageFile',
           headers: {
             'supplierToken': sessionStorage['suppliertoken']
@@ -30,6 +30,9 @@
     watch: {},
 
     methods: {
+      singleImg(val){
+        console.log('gt-singleImg',val)
+      }
     },
     /**
      * 
@@ -40,7 +43,7 @@
 
     },
     mounted() {
-
+      this.$bus.on('gt-singleImg',this.singleImg);
     },
   }
 </script>
