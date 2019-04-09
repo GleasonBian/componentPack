@@ -1,6 +1,8 @@
 <template>
-  <head-top></head-top>
-
+  <div>
+    <head-top></head-top>
+    <gt-singleImg></gt-singleImg>
+  </div>
 </template>
 
 <script>
@@ -13,13 +15,13 @@
     data() {
       return {
         data: {
-          key:'singleImg',
+          key: 'singleImg',
           action: '',
           name: 'imageFile',
           headers: {
             'supplierToken': sessionStorage['suppliertoken']
           },
-          default:'/M00/0C/87/wKgBxFyQa-2ET99JAAAAALpErmE435.jpg'
+          default: '/M00/0C/87/wKgBxFyQa-2ET99JAAAAALpErmE435.jpg'
         }
       };
     },
@@ -28,7 +30,6 @@
     watch: {},
 
     methods: {
-
     },
     /**
      * 
