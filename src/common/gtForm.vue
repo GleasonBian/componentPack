@@ -403,7 +403,7 @@
         console.log(val);
       },
       /**
-       *  单图上传 前 处理函数
+       *  图片上传 前 处理函数
        */
       beforeImageUpload(file) {
         const isJPG = file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/gif';
