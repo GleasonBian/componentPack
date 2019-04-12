@@ -198,6 +198,9 @@
       },
       cascaderChange(val){
         console.log(val);
+      },
+      submitHandle(val){
+        console.log(val);
       }
     },
     /**
@@ -209,7 +212,7 @@
 
     },
     mounted() {
-
+      this.$bus.on('submit',this.submitHandle)
     },
   }
 </script>

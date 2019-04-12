@@ -39,7 +39,8 @@
        */
       sendImgData(){
         let data = JSON.parse(JSON.stringify(this.model));
-        data.multiImg.map(img=>{
+        let key = this.$props.data.key;
+        data[key].map(img=>{
           delete img.status;
           delete img.uid;
           delete img.url;

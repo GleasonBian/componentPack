@@ -65,6 +65,7 @@ import gtCascader from '@/common/gtCascader'
 import gtAutocomplete from '@/common/gtautocomplete'
 import gtSingleImg from '@/common/gtSingleImg'
 import gtMultiImg from '@/common/gtMultiImg'
+import gtFile from '@/common/gtFile'
 Vue.component('gt-pagination', pagination)
 Vue.component('gt-form', gtform)
 Vue.component('gt-dialog', dialog)
@@ -77,6 +78,7 @@ Vue.component('gt-cascader', gtCascader);
 Vue.component('gt-autocomplete', gtAutocomplete);
 Vue.component('gt-singleImg', gtSingleImg);
 Vue.component('gt-multiImg', gtMultiImg);
+Vue.component('gt-file', gtFile);
 
 
 /*

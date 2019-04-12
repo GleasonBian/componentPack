@@ -3,6 +3,7 @@
     <head-top></head-top>
     <gt-singleImg :data='data'></gt-singleImg>
     <gt-multiImg :data='multImgData'></gt-multiImg>
+    <gt-file :data='fileData'></gt-file>
   </div>
 </template>
 
@@ -27,13 +28,24 @@
         multImgData:{
           key:'multiImg',
           action:'/api/material/fileUpload/uploadImage',
+          limit:5,
           name:'imageFile',
           limit:5,
           header:{
             'supplierToken': sessionStorage['suppliertoken']
           },
           default:[{ filePath: 'M00/0C/D1/wKgBxFyi-IqEUrEUAAAAALpErmE142.jpg',}, { filePath: '/M00/0C/D1/wKgBxFyi-OiEejaWAAAAAGaPstA973.png'}]
-        }
+        },
+        fileData: {
+            key:'fileList',
+            action:'/api/wxsupplier/relatedFile/documentUpload',
+            default:[
+              { filePath: 'M00/0C/D1/wKgBxFyi-IqEUrEUAAAAALpErmE142.jpg',}, 
+              { filePath: '/M00/0C/D1/wKgBxFyi-OiEejaWAAAAAGaPstA973.png'}
+            ],
+            limit:5,
+          },
+        
       };
     },
     computed: {},
@@ -46,6 +58,9 @@
       },
       multiImg(val){
         console.log('gt-multiImg',val);
+      },
+      gtFileUpload(val){
+        console.log('gt-file',val)
       }
     },
     /**
@@ -59,6 +74,7 @@
     mounted() {
       this.$bus.on('gt-singleImg',this.singleImg);
       this.$bus.on('gt-multiImg',this.multiImg);
+      this.$bus.on('gt-file',this.gtFileUpload);
     },
   }
 </script>

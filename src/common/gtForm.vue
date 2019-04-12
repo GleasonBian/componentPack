@@ -79,7 +79,7 @@
 
         <!-- 文件上传 -->
         <div  v-else-if="item.type === 'file'"  :style="item.width?'width:'+item.width+'%':'width:'+width+'%'">
-              <el-upload
+          <el-upload
           :limit='item.limit ? item.limit : 5'
           :action="item.action?item.action: process.env.API_HOST+'/wxsupplier/relatedFile/documentUpload'"
           :headers="headers" 
@@ -382,6 +382,7 @@
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
+            console.log(1);
             this.$bus.emit('submit',this.model)
           } else {
             console.log('error submit!!');
