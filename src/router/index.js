@@ -16,7 +16,7 @@ const dialog = r => require.ensure([], () => r(require('@/page/dialog')), 'dialo
 const upload = r => require.ensure([], () => r(require('@/page/upload')), 'upload');
 const newTag = r => require.ensure([], () => r(require('@/page/newTag')), 'newTag');
 const autocomplete = r => require.ensure([], () => r(require('@/page/autocomplete')), 'autocomplete');
-const vueEdit = r => require.ensure([], () => r(require('@/page/vueEdit')), 'vueEdit');
+const userEditor = r => require.ensure([], () => r(require('@/page/userEditor')), 'userEditor');
 const editor = r => require.ensure([], () => r(require('@/page/editor')), 'editor');
 const cascader = r => require.ensure([], () => r(require('@/page/cascader')), 'cascader');
 const brand = r => require.ensure([], () => r(require('@/page/brand')), 'brand');
@@ -75,8 +75,8 @@ const routes = [{
       component: autocomplete,
       meta: ['文本编辑', 'MarkDown'],
     }, {
-      path: '/vueEdit',
-      component: vueEdit,
+      path: '/userEditor',
+      component: userEditor,
       meta: ['编辑', '文本编辑'],
     }, {
       path: '/userList',

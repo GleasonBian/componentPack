@@ -74,7 +74,7 @@
        * 新增用户
        */
       newUser(){
-         this.$router.push("/goodsPublish");
+        this.$router.push("/goodsPublish");
       },
 
       /**
@@ -128,7 +128,7 @@
       editorUser(index,val){
         console.log('编辑用户',val);
        
-        console.log(this.$router);
+        this.$router.push("/userEditor");
       }
     },
     /**
