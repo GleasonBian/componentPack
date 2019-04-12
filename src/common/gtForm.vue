@@ -382,7 +382,6 @@
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            console.log(1);
             this.$bus.emit('submit',this.model)
           } else {
             console.log('error submit!!');
