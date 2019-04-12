@@ -11,6 +11,22 @@
           :disabled="item.disabled?item.disabled:false" :style="item.width?'width:'+item.width+'%':'width:'+width+'%'">
         </el-input>
 
+        <!-- 密码 -->
+        <el-input v-if="item.type === 'password'" v-model="model[item.key]"
+          type="password" autocomplete='off'
+          :placeholder="item.placeholder?item.placeholder:'请输入'+item.label"
+          :disabled="item.disabled?item.disabled:false" 
+          :style="item.width?'width:'+item.width+'%':'width:'+width+'%'">
+        </el-input>
+
+        <!-- 确认密码 -->
+        <el-input v-if="item.type === 'checkPwd'" v-model="model[item.key]"
+          type="password" autocomplete='off'
+          :placeholder="item.placeholder?item.placeholder:'请输入'+item.label"
+          :disabled="item.disabled?item.disabled:false" 
+          :style="item.width?'width:'+item.width+'%':'width:'+width+'%'">
+        </el-input>
+
         <!--  下拉选择框 / 单选 -->
         <el-select v-else-if="item.type=='options'" v-model="model[item.key]"
           :placeholder="item.placeholder?item.placeholder:'请选择'+item.label" style="width:100%;"
@@ -42,7 +58,7 @@
 
         <!-- 日期选择器 -->
         <el-date-picker v-else-if="item.type === 'date'" v-model="model[item.key]" type="date" format="yyyy 年 MM 月 dd 日"
-          value-format='yyyy-MM-dd mm:ss' style="width:100%;" placeholder="选择日期"
+          value-format='yyyy-MM-dd hh:mm:ss' style="width:100%;" placeholder="选择日期"
           :style="item.width?'width:'+item.width+'%':'width:'+width+'%'">
         </el-date-picker>
 
@@ -61,7 +77,7 @@
           :name="item.name?item.name:'imageFile'" :show-file-list="false" accept="image/*"
           :on-success="singleImageSuccess" :before-upload="beforeImageUpload" :on-error="uploadError"
           :headers="headers">
-          <img v-if="model[item.key]" :src="'http://file.sjgtw.com/'+item.default" class="avatar">
+          <img v-if="model[item.key]" :src="item.default?'http://file.sjgtw.com/'+item.default: 'http://file.sjgtw.com/'+model[item.key] " class="avatar">
           <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
 
@@ -192,6 +208,14 @@
           </el-popover>
           
         </div>
+
+        <!-- 部门添加 -->
+        <el-cascader 
+          v-else-if="item.type === 'dept'" :style="item.width?'width:'+item.width+'%':'width:'+width+'%'"
+          v-model="model[item.key]" 
+          :options="deptIdOption" 
+          :props="{label: 'name',value: 'id'}" 
+         ></el-cascader>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm(formName)">{{submitText}}</el-button>
@@ -267,11 +291,13 @@
     TextToCode,
     CodeToText
   } from "element-china-area-data";
+  import { getDeptTree}  from '@/api/getData'
   export default {
-    name: '',
+    name: 'gt-form',
     components: {},
     data() {
-      return {
+      return { 
+        deptProps:{},
         model: {},
         attr:{
           key:'',
@@ -339,6 +365,10 @@
         areaData: [], // 当前选择 区域
         areaTS: [],
         areaDialog: false,
+        /**
+         * 部门树
+         */
+        deptIdOption:[],
       };
     },
     props: {
@@ -376,12 +406,23 @@
     },
 
     methods: {
+      /* 
+       ** 获取用户部门树 新增 内部用户
+       */
+      async getDeptTree(info) {
+        const res = await getDeptTree();
+        if (res.result)
+          this.deptIdOption = res.data;
+        else
+          this.$message.warning(res.message);
+      },
       /**
        * 提交按钮  表单验证
        */
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
+            
             this.$bus.emit('submit',this.model)
           } else {
             console.log('error submit!!');
@@ -796,12 +837,15 @@
                               this.activeName = 'PC'
                           }
             break;
+          case 'dept' : {
+                          this.$set(this.model, item.key,  item.default?item.default: [])
+                        }
           default :  this.$set(this.model, item.key, item.default?item.default:'');
         }
       })
     },
     mounted() {
-
+      this.getDeptTree();
     }
   }
 </script>

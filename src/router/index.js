@@ -20,6 +20,8 @@ const vueEdit = r => require.ensure([], () => r(require('@/page/vueEdit')), 'vue
 const editor = r => require.ensure([], () => r(require('@/page/editor')), 'editor');
 const cascader = r => require.ensure([], () => r(require('@/page/cascader')), 'cascader');
 const brand = r => require.ensure([], () => r(require('@/page/brand')), 'brand');
+const goodsPublish = r => require.ensure([], () => r(require('@/page/goodsPublish')), 'goodsPublish');
+const userList = r => require.ensure([], () => r(require('@/page/userList')), 'userList');
 
 const routes = [{
     path: '/',
@@ -77,13 +79,17 @@ const routes = [{
       component: vueEdit,
       meta: ['编辑', '文本编辑'],
     }, {
+      path: '/userList',
+      component: userList,
+      meta: ['编辑', '文本编辑'],
+    }, {
       path: '/editor',
       component: editor,
       meta: ['设置', '管理员设置'],
     }, {
-      path: '/cascader',
-      component: cascader,
-      meta: ['设置', '发送通知'],
+      path: '/goodsPublish',
+      component: goodsPublish,
+      meta: ['发布', '商品'],
     }, {
       path: '/brand',
       component: brand,

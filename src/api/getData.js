@@ -17,8 +17,6 @@ export const signout = () => fetch('/admin/singout');
  */
 export const getPagerUserInfo = data => fetch('wxsupplier/userInfoQuery/getPagerUserInfo', data, 'POST');
 
-
-
 /**
  * 品牌
  */
@@ -33,22 +31,22 @@ export const baseClassJSONData = data => fetch('material/baseClass/baseClassJSON
 
 
 /**
- * 所有api请求信息
+ *  保存用户
  */
 
-export const apiAllRecord = () => fetch('/statis/api/all');
+export const saveAdminUser = data => fetch('wxsupplier/supplierProvider/saveAdminUser', data,'POST');
 
 /**
- * 用户注册量
+ * 部门树
  */
 
-export const userCount = date => fetch('/statis/user/' + date + '/count');
+export const getDeptTree = () => fetch("/wxsupplier/supplierProvider/getDeptTree",'POST');
 
 /**
- * 某一天订单数量
+ * 用户管理 / 内部User(批量删除)
  */
 
-export const orderCount = date => fetch('/statis/order/' + date + '/count');
+export const deleteUserByIds = data => fetch('wxsupplier/supplierProvider/deleteUserByIds', data);
 
 
 /**

@@ -19,11 +19,12 @@
            <el-menu-item index="cascader">级联</el-menu-item>
            <el-menu-item index="autocomplete">远程输入建议</el-menu-item>
            <el-menu-item index="upload">上传</el-menu-item>
+           <!-- <el-menu-item index="goodsPublish">新增</el-menu-item> -->
           </el-submenu>
           <el-submenu index="3">
-            <template slot="title"><i class="el-icon-plus"></i>订单管理</template>
-            <el-menu-item index="addShop">订单管理</el-menu-item>
-            <!-- <el-menu-item index="addGoods">订单详情</el-menu-item> -->
+            <template slot="title"><i class="el-icon-plus"></i>用户管理</template>
+            <el-menu-item index="userList">用户列表</el-menu-item>
+            <!-- <el-menu-item index="goodsPublish">订单详情</el-menu-item> -->
           </el-submenu>
           <el-submenu index="4">
             <template slot="title"><i class="el-icon-star-on"></i>商家管理</template>

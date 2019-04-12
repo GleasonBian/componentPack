@@ -1,40 +1,40 @@
 <template>
- 	<head-top></head-top>
+  <head-top></head-top>
 </template>
 
 <script>
-import headTop from '@/components/headTop'
-export default {
-name:'',
-components: {
-  headTop
-},
-data() {
-return {
+  import headTop from '@/components/headTop'
+  export default {
+    name: '',
+    components: {
+      headTop
+    },
+    data() {
+      return {
 
-};
-},
-computed: {},
+      };
+    },
+    computed: {},
 
-watch: {},
+    watch: {},
 
-methods: {
+    methods: {
 
-},
-/**
-* 
-* 生命周期
-*
-*/
-created() {
+    },
+    /**
+     * 
+     * 生命周期
+     *
+     */
+    created() {
 
-},
-mounted() {
+    },
+    mounted() {
 
-},
-}
+    },
+  }
 </script>
-<style  scoped>
+<style scoped>
 
 
 </style>
