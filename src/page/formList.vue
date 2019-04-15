@@ -8,10 +8,7 @@
       <template slot='boy'>
         男生
       </template>
-      <div>
-            我是一类人，
-            我是默认的插槽
-        </div>
+      <div>我是一类人，我是默认的插槽</div>
     </gt-form>
   </div>
 </template>

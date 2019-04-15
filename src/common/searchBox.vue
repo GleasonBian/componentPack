@@ -108,7 +108,7 @@
         this.$set(this.search, item.key, item.default ? item.default : '');
       })
     },
-    mounted() {
+    mounted () {
 
     },
   }
@@ -168,7 +168,6 @@
     justify-content: center;
     width: 30%;
     align-items: center;
-    /* border: 1px solid tomato; */
     margin-bottom: 15px;
   }
 
