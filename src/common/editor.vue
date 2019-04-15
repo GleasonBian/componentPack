@@ -18,7 +18,6 @@
     </el-tab-pane>
   </el-tabs>
 </template>
-
 <script>
   const toolbarOptions = [
     ['bold', 'italic', 'underline', 'strike'], // toggled buttons

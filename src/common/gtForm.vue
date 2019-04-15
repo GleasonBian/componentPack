@@ -108,7 +108,6 @@
         </el-upload>
         </div>
     
-
         <!-- 可编辑tag -->
         <div v-else-if="item.type === 'tag'" :style="item.width?'width:'+item.width+'%':'width:'+width+'%'">
           <el-tag class="new-tag" :key="tag" v-for="tag in model[item.key]" closable :disable-transitions="false"
@@ -206,7 +205,6 @@
             </el-table>
             <el-button @click="attrHandle" type="success" icon="el-icon-plus" slot="reference" circle></el-button>
           </el-popover>
-          
         </div>
 
         <!-- 部门添加 -->
@@ -217,6 +215,12 @@
           :props="{label: 'name',value: 'id'}" 
          ></el-cascader>
       </el-form-item>
+      <el-form-item label="插槽内容">
+        <slot name="girl"></slot>
+        <slot name="boy"></slot>
+        <slot></slot>
+      </el-form-item>
+      
       <el-form-item>
         <el-button type="primary" @click="submitForm(formName)">{{submitText}}</el-button>
         <el-button @click="resetForm(formName)">重置</el-button>
@@ -422,7 +426,6 @@
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            
             this.$bus.emit('submit',this.model)
           } else {
             console.log('error submit!!');
@@ -434,8 +437,8 @@
        ** 填入表单 重置
        */
       resetForm(formName) {
+        console.log(formName);
         this.$refs[formName].resetFields();
-        this.imageUrl = ''
       },
       /**
        **  日期范围 回调

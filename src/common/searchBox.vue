@@ -18,33 +18,9 @@
       <div class="search-item">
         <el-button type="primary" @click="searchHandle" :size="size" style="width:32%; margin-right:15px">搜 索
         </el-button>
-        <el-button type="info" @click="reset" :size="size" style="width:32%">重置</el-button>
+        <el-button type="info" @click="reset" :size="size" style="width:32%">重 置</el-button>
       </div>
     </div>
-    <!-- <div class="search-box-double" v-else-if="data.length<=6">
-      <div class="search-box-double-input">
-        <div class="search-box-double-item" v-for="(item,index) in data" :key="index">
-          <div class="search-item-label">{{item.label?item.label:'未绑定label'}}：</div>
-          <el-select v-if="item.options" v-model="search[item.key]"
-            :placeholder="item.placeholder?item.placeholder:'请选择搜索关键字'" :style="data.length<=6 ? 'width:100%;' :'width:100%; margin-right:15px' ">
-            <el-option v-for="(opt,optIdx) in item.options" :key="optIdx" :label="opt.label" :value="opt.value">
-            </el-option>
-          </el-select>
-          <el-date-picker v-else-if="item.key === 'date'" v-model="search[item.key]" type="daterange"
-            format="yyyy 年 MM 月 dd 日" value-format='yyyy-MM-dd mm:ss' range-separator="至" start-placeholder="开始日期"
-            end-placeholder="结束日期" :style="data.length<=6 ? 'width:100%;' :'width:100%; margin-right:15px'" @change="dateChange(search[item.key])">
-          </el-date-picker>
-          <el-input v-else v-model="search[item.key]" :placeholder="item.placeholder?item.placeholder:'请输入搜索关键字'"
-            :size="size">
-          </el-input>
-        </div>
-      </div>
-      <div class="search-box-double-button">
-        <el-button type="primary" @click="searchHandle" :size="size" class="search-button">搜 索
-        </el-button>
-        <el-button type="info" @click="reset" :size="size" style="margin-left:0px" class="search-button">重置</el-button>
-      </div>
-    </div>  -->
     <div class="search-box-multi" v-else-if="data.length>3">
       <div class="search-multi-item" v-for="(item,index) in data" :key="index">
         <div class="search-item-label">{{item.label?item.label:'暂无!'}}：</div>
@@ -63,7 +39,7 @@
       <div class="search-multi-item-button">
         <el-button type="primary" @click="searchHandle" :size="size" style="width:32%; margin-right:15px">搜 索
         </el-button>
-        <el-button type="info" @click="reset" :size="size" style="width:32%">重置</el-button>
+        <el-button type="info" @click="reset" :size="size" style="width:32%">重 置</el-button>
       </div>
     </div>
   </div>
