@@ -1,14 +1,8 @@
 <template>
   <div>
     <head-top></head-top>
-    <gt-form :data='fromData' :width="width" formName='UserMange' labelwidth='100' @active-item-change='cascaderHandle' @change="cascaderChange">
-      <template slot='girl'>
-        女生
-      </template>
-      <template slot='boy'>
-        男生
-      </template>
-      <div>我是一类人，我是默认的插槽</div>
+    <gt-form :data='fromData' :width="width" formName='UserMange' labelwidth='100' @active-item-change='cascaderHandle' @change="cascaderChange" slotName="扩展"> 
+      <div>扩展内容可插入任意代码</div>
     </gt-form>
   </div>
 </template>

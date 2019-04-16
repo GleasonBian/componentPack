@@ -47,6 +47,7 @@
 <script>
 const toolbarOptions = [
   ["bold", "italic", "underline", "strike"], // toggled buttons
+
   ["blockquote", "code-block"],
 
   [
@@ -123,7 +124,7 @@ const toolbarOptions = [
       align: []
     }
   ],
-  ["image"], //'link',, 'video'                // 图片 链接 视频
+  ["image"], //'link',, 'video'图片 链接 视频
   ["clean"] // 删除格式化按钮
 ];
 export default {

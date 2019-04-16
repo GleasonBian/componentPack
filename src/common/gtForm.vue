@@ -394,9 +394,7 @@
           :props="{label: 'name',value: 'id'}"
         ></el-cascader>
       </el-form-item>
-      <el-form-item label="插槽内容">
-        <slot name="girl"></slot>
-        <slot name="boy"></slot>
+      <el-form-item :label="slotName">
         <slot></slot>
       </el-form-item>
 
@@ -606,6 +604,10 @@ export default {
     submitText: {
       type: String,
       default: "确认"
+    },
+    slotName:{
+      type:String,
+      default:'你好'
     }
   },
   computed: {},
