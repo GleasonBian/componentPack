@@ -2,7 +2,7 @@
   <!-- 品牌选择 -->
   <div>
     <el-button type="primary" @click="clickChooseBrand">点击选择</el-button>
-    <el-tag v-show="brandName !== ''">{{brandName}}</el-tag>
+    <el-tag v-show="brandName !== ''">{{ brandName }}</el-tag>
     <el-dialog
       title="选择品牌"
       :visible.sync="isShowbrandBox"
@@ -13,12 +13,16 @@
     >
       <el-form label-width="100px">
         <el-form-item label="搜索品牌">
-          <el-input placeholder="请输入品牌名称" v-model="brandKeyword" clearable>
+          <el-input
+            placeholder="请输入品牌名称"
+            v-model="brandKeyword"
+            clearable
+          >
             <el-button slot="append" icon="el-icon-search"></el-button>
           </el-input>
         </el-form-item>
         <el-form-item label="已选品牌">
-          <el-tag type="success">{{brandName||'请选择品牌'}}</el-tag>
+          <el-tag type="success">{{ brandName || "请选择品牌" }}</el-tag>
         </el-form-item>
       </el-form>
       <el-table
@@ -31,12 +35,23 @@
         @current-change="handleCurrentChange"
         v-loading="loading"
       >
-        <el-table-column type="index" label="序号" align="center" header-align="center" width="50"></el-table-column>
-        <el-table-column prop="chineseName" label="中文名称" align="center" header-align="center"></el-table-column>
+        <el-table-column
+          type="index"
+          label="序号"
+          align="center"
+          header-align="center"
+          width="50"
+        ></el-table-column>
+        <el-table-column
+          prop="chineseName"
+          label="中文名称"
+          align="center"
+          header-align="center"
+        ></el-table-column>
         <!-- <el-table-column prop="englishName"  label="英文名称" align="center" header-align="center"> </el-table-column> -->
         <el-table-column label="图片" align="center" header-align="center">
           <template slot-scope="scope">
-            <img :src="scope.row.fileVO" alt="图片" style="height:30px">
+            <img :src="scope.row.fileVO" alt="图片" style="height:30px" />
           </template>
         </el-table-column>
       </el-table>
